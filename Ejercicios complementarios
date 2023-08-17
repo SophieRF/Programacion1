@@ -1,0 +1,65 @@
+numero1 = 12
+
+numero2 = 6.5
+
+
+suma = numero1 + numero2
+
+resta = numero1 - numero2
+
+multiplicacion = numero1 * numero2
+
+division = numero1 / numero2
+
+
+print ("suma:", suma, ", resta:", resta, ", multiplicaci�n:", multiplicacion, ", divisi�n", division)
+
+
+nombre = "Sof�a"
+
+precio = 8.200
+
+descuento = 0.30
+
+precio_final = descuento * 8.200
+
+
+cadena = "Hola, soy Sofi, estudiante de la TUP"
+
+longitud = len(cadena)
+
+precio = 3.500
+
+precio_entero = int(precio)
+
+
+nombre = "Sofia"
+
+apellido = "Ferraro"
+
+nombre_completo = nombre + " " + apellido
+
+print (nombre_completo)
+
+
+edad = 30
+
+edad += 5
+
+edad -= 10
+
+
+altura = 1.65
+
+altura *= 4
+
+altura /= 3
+
+
+mi_nombre = "SOFIA FERRARO"
+
+mi_nombre_min = mi_nombre.lower()
+
+mi_nombre_mix = mi_nombre.capitalize()
+
+print (mi_nombre_mix)
