@@ -1,0 +1,52 @@
+dia = input("Ingresar día de la semana")
+dd = int(input("Ingresar día del mes"))
+mm = int(input("Ingresar número de mes"))
+fecha = dia + ", " + str(dd) + "/" + str(mm)
+
+if (dia != "lunes" and dia != "martes" and dia != "miercoles" and dia != "jueves" and dia != "viernes"):
+    print ("Error: día inválido")
+elif (dd >31 or dd < 1):
+    print("Error: día inválido")
+elif (mm > 12 or mm < 1):
+    print("Error: mes inválido")
+
+else:
+    print(fecha)
+
+nivel = "Inicial"
+if dia == "lunes":
+    nivel = nivel
+elif dia == "martes":
+    nivel = "Intermedio"
+elif dia == "miercoles":
+    nivel = "Avanzado"
+elif dia == "jueves":
+    nivel = "Práctica hablada"
+elif dia == "viernes":
+    nivel = "Inglés para viajeros"
+
+
+alum_aprobaron = 0
+alum_desaprobaron = 0
+promedio_aprobaron = 0
+asistencias = 0
+
+if nivel == "Inicial" or nivel == "Intermedio" or nivel == "Avanzado":
+    alum_aprobaron = int(input("Ingrese cantidad de alumnos/as que aprobaron"))
+    alum_desaprobaron = int(input("Ingrese cantidad de alumnos/as que desaprobaron"))
+    alum_total = alum_aprobaron + alum_desaprobaron
+    promedio_aprobaron = alum_aprobaron / alum_total * 100
+    print ("El promedio de alumnos/as que aprobaron es de", promedio_aprobaron, "%")
+if nivel == "Práctica hablada":
+    asistencias = int(input("Indique el porcentaje de asistencias a la clase"))
+    if asistencias > 50:
+        print ("Asistió la mayoría")
+    else:
+        print ("No asistió la mayoría")
+alum_nuevo_ciclo = 0
+arancel = 0
+if nivel == "Inglés para viajeros" and dd == 1 and (mm == 1 or mm == 7):
+    print("Comienzo de nuevo ciclo")
+    alum_nuevo_ciclo = int(input("Ingrese cantidad de alumnos/as del nuevo ciclo"))
+    arancel = int(input("Ingrese arancel a pagar por cada alumno"))
+    print("El ingreso total corresponde a",alum_nuevo_ciclo*arancel)
