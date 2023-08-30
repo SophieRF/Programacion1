@@ -1,0 +1,39 @@
+#Ejercicio 1: No pude resolverlo, no logro que de los resultados pedidos#
+mensajes = []
+
+for i in range(0,5,1):
+  mensaje = str(input("Ingresar mensaje"))
+  mensajes.append(mensaje)
+ 
+pasos = int(input("Ingrese pasos a saltar"))
+abecedario = "abcdefghijklmnñopqrstuvwxyz"
+cifra_cesar = ""
+
+for mje in mensajes :
+    mje_encrip = ""
+    for letra in mje:
+        if letra.lower() in abecedario:
+            abc_posic = abecedario.find(letra)
+            nueva_posic = (abc_posic + pasos) % 27
+            letra_encrip = abecedario[nueva_posic]
+            mje_encrip += letra_encrip
+        else:
+            cifra_cesar += letra
+    cifra_cesar += mje_encrip
+
+print(cifra_cesar)
+#Ejercicio 2#
+num_posit = [1]
+dig_par = 0
+dig_impar = 0
+while num_posit != 0:
+    num_posit = int(input("Ingrese número positivo"))
+    if num_posit == 0:
+        break
+    num_posit = str(num_posit)
+    for digito in num_posit:
+        if int(digito) % 2 == 0:
+            dig_par += 1
+        else:
+            dig_impar += 1
+print("La cantidad de dígitos pares es de "+ str(dig_par) + "y los impares son un total de " + str(dig_impar))
