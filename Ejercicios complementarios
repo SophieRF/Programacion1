@@ -1,38 +1,45 @@
+#Ejercicio 1
 numero1 = 12
 
+#Ejercicio 2
 numero2 = 6.5
 
-
+#Ejercicio 3
 suma = numero1 + numero2
 
+#Ejercicio 4
 resta = numero1 - numero2
 
 multiplicacion = numero1 * numero2
 
 division = numero1 / numero2
 
-
 print ("suma:", suma, ", resta:", resta, ", multiplicaci�n:", multiplicacion, ", divisi�n", division)
 
-
+#Ejercicio 5
 nombre = "Sof�a"
 
+#Ejercicio 6
 precio = 8.200
 
+#Ejercicio 7
 descuento = 0.30
 
+#Ejercicio 8
 precio_final = descuento * 8.200
 
-
+#Ejercicio 9
 cadena = "Hola, soy Sofi, estudiante de la TUP"
 
+#Ejercicio 10
 longitud = len(cadena)
 
+#Ejercicio 11
 precio = 3.500
 
 precio_entero = int(precio)
 
-
+#Ejercicio 12
 nombre = "Sofia"
 
 apellido = "Ferraro"
@@ -41,25 +48,26 @@ nombre_completo = nombre + " " + apellido
 
 print (nombre_completo)
 
-
+#Ejercicio 13
 edad = 30
 
 edad += 5
 
 edad -= 10
 
-
+#Ejercicio 14
 altura = 1.65
 
 altura *= 4
 
 altura /= 3
 
-
+#Ejercicio 15
 mi_nombre = "SOFIA FERRARO"
 
 mi_nombre_min = mi_nombre.lower()
 
-mi_nombre_mix = mi_nombre.capitalize()
+#Ejercicio 16
+mi_nombre_mix = mi_nombre.title()
 
 print (mi_nombre_mix)
