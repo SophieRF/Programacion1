@@ -1,7 +1,9 @@
-dia = input("Ingresar día de la semana")
-dd = int(input("Ingresar día del mes"))
-mm = int(input("Ingresar número de mes"))
-fecha = dia + ", " + str(dd) + "/" + str(mm)
+fecha = input("Ingresar fecha en formato: día, DD/MM")
+fecha_div = fecha.split(", ")
+dia = fecha_div[0].lower()
+dd_mm = fecha_div[1].split("/")
+dd = int(dd_mm[0])
+mm = int(dd_mm[1])
 
 if (dia != "lunes" and dia != "martes" and dia != "miercoles" and dia != "jueves" and dia != "viernes"):
     print ("Error: día inválido")
