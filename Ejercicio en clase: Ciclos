@@ -22,18 +22,30 @@ for mje in mensajes :
     cifra_cesar += mje_encrip
 
 print(cifra_cesar)
+
 #Ejercicio 2#
-num_posit = [1]
-dig_par = 0
-dig_impar = 0
+num_posit = 1
+digito = 0
+total_par = 0
+total_impar = 0
 while num_posit != 0:
-    num_posit = int(input("Ingrese número positivo"))
+    num_posit = int(input("Ingrese número positivo (para salir y ver los resultados presione 0): "))
     if num_posit == 0:
         break
-    num_posit = str(num_posit)
-    for digito in num_posit:
-        if int(digito) % 2 == 0:
+    dig_impar = 0
+    dig_par = 0
+    num_aux = num_posit
+    while num_aux > 0:
+        digito = num_aux %10
+    
+        if digito % 2 == 0:
             dig_par += 1
+            total_par += 1
         else:
             dig_impar += 1
-print("La cantidad de dígitos pares es de "+ str(dig_par) + "y los impares son un total de " + str(dig_impar))
+            total_impar += 1
+        num_aux //= 10
+    print("Cantidad de dígitos pares:  "+ str(dig_par) + ", cantidad de impares: " + str(dig_impar))
+
+
+print("Cantidad total de dígitos pares:  "+ str(total_par) + ", cantidad total de impares: " + str(total_impar))
