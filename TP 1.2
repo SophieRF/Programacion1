@@ -225,10 +225,27 @@ print(fecha, "/", mes, "/", año)
 #Ejercicio20
 #Hacer otra versión del programa, pero esta vez almacenado todo en una única variable con formato DDMMAAA.
 
-import datetime
-fecha_nac = input('Ingrese su fecha de nacimiento en formato dd/mm/yyyy: ')
-transformar_fecha = datetime.datetime.strptime(fecha_nac,"%d/%m/%Y" )
-print(transformar_fecha.strftime('%d%m%Y'))
+fecha = input("Ingrese fecha de su nacimiento en formato DDMMAAAA: ")
+fecha_final = ""
+dia = ""
+mes = ""
+anio = ""
+ref = "DDMMAAAA"
+
+for i in range(len(fecha)):
+    if ref[i] == "D":
+        dia += fecha[i]
+    elif ref[i] == "M":
+        mes += fecha[i]
+    elif ref[i] == "A":
+        anio += fecha[i]
+
+if dia and mes and anio:
+    fecha_final = dia + "/" + mes + "/" + anio
+    print(fecha_final)
+else:
+    fecha_final = "Fecha incompleta"
+    print(fecha_final)
 
 #Ejercicio21
 #Una pareja de motociclistas necesita hacer ciertos cálculos antes de emprender un viaje en moto, para
