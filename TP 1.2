@@ -204,9 +204,12 @@ print('Ahora estas en la matrix', usuario)
 #Hacer un programa que solicite al usuario cuánto costó una cena en un restaurante. A ese valor, sumarle
 #un 6.2% en concepto de servicio y un 10% de propina. Imprimir en pantalla el monto final a pagar.
 
-cena = float(input("Ingrese el valor de la cena: "))
-total = cena + (cena * 0.62) + (cena * .1)
-print("El valor total es:",total)
+cena = float(input("Indique el costo de la cena: "))
+servicio = (cena * 0.062)
+propina = (cena * 0.1)
+valor_final = cena + servicio + propina
+
+print ("Monto final a pagar: $", valor_final)
 
 #Ejercicio19
 #Solicitar al usuario que ingrese el día, mes y año de su nacimiento y almacenar cada uno de ellos
