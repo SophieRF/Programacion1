@@ -1,0 +1,156 @@
+#Exercise 1
+x = 0
+exit = 0
+
+while x <= 30:
+    if x == 4 or x == 6  or x == 10:
+        print('The value ' + str(x) + ' of x was skipped')
+    else:
+        print('The value of the loop is: ' + str(x))
+    x += 1
+    if x == 15:
+        print('The execution of the loop was broken when x was ' + str(x))
+        break
+
+
+#Exercise 1.1 Escriba un programa que acepte
+#  una secuencia de líneas e imprima todas las líneas
+#  convertidas en mayúsculas. Deje una línea en blanco para indicar que ha
+#  finalizado la entrada de líneas.
+prompt = 1
+all_lines = [""]
+while prompt == 1:
+    line = input("Draw a line. If you wanna exit input an space: ")
+    all_lines.append(line)
+    if line == " ":
+        all_lines.append(" \n")
+        break
+
+print(" ".join(all_lines))
+
+
+
+
+'''#2.  Escriba un programa que administre una cuenta bancaria, usando una bitácora de operaciones.
+La bitácora de operaciones tiene la siguiente forma:
+D 100
+R 50
+
+D 100 significa que depositó 100 pesos
+R 50 significa que retiró 50 pesos
+
+Ejemplo de una entrada:
+D 200
+D 200
+R 100
+D 50
+Introducir una línea vacía indica que ha finalizado la bitácora.
+La salida de éste programa sería:
+350
+'''
+D = 0
+R = 0
+money = int(input("Ingrese saldo disponible"))
+index = 1
+while index == 1:
+    prompt = input("Si desea retirar dinero presione r, si desea depositar presione d, para salir y ver el saldo final presione s: ")
+    if prompt == "r":
+        money -= int(input("Ingrese monto a retirar: "))
+        print("Saldo actual: $", money)
+    elif prompt == "d":
+        money += int(input("Ingrese monto a depositar: "))
+        print("Saldo actual: $", money)
+    else:
+        break
+
+print("Su saldo final es de: $", money)
+
+
+'''#3.  Escribir un programa que solicite el ingreso de una cantidad
+indeterminada de números mayores que 1, finalizando cuando se reciba un cero.
+Imprimir la cantidad total de números primos ingresados.
+Nota: Un número primo es un número natural mayor que 1 que tiene únicamente 
+dos divisores distintos: él mismo y el 1.'''
+
+prompt = []
+index = 1
+while index == 1:
+    num = input("Ingrese un número mayor a 1. Para finalizar ingrese 0: ")
+    if num <= 1:
+        break
+    else:
+        for i in range(2, num//2 + 1):
+            if num % i == 0:
+                continue
+            else:    
+                prompt.append(num)
+'''SIN TERMINAR'''
+
+print(prompt)
+
+'''#4. Escribir un programa que permita al usuario ingresar dos años y
+luego imprima todos los años en ese rango, que sean bisiestos y múltiplos de 10.
+Nota: Para que un año sea bisiesto debe ser divisible por 4 y no debe ser
+divisible por 100, excepto que también sea divisible por 400.
+'''
+
+year1 = int(input("Ingrese un año de inicio: "))
+year2 = int(input("Ingrese hasta qué año hacer el cálculo: "))
+
+print("Teniendo en cuenta el rango establecido, estos son los años bisiestos correspondientes: ")
+for i in range(year1, year2 + 1):
+    if i % 4 == 0 and (i % 100 != 0 or (i % 10 == 0 and i % 400 == 0)):
+        print (i)
+    else:
+        continue
+
+'''#5. Escribe un programa que imprima todos los números pares del 1 al 20 usando
+un bucle for. Utiliza la declaración continue para omitir los números impares.'''
+
+print("Números pares del 1 al 20: ")
+for i in range(1, 20+1):
+    if i % 2 == 0:
+        print(i)
+    else:
+        continue
+
+'''6.	Crea una lista de números y utiliza un bucle for para encontrar un número específico.
+Cuando encuentres el número, usa break para salir del bucle.'''
+
+numbers = [1, 6, 20, 50, 24, 73, 16, 4, 9, 32, 21, 90, 2, 47, 93, 7, 3, 13, 82, 45]
+
+the_number = int(input("Indique el número que desea encontrar: "))
+exist = False
+
+for number in numbers:
+    if number == the_number:
+        exist = True
+        break
+    else:
+        exist = False
+
+
+if exist:
+    print("El número " + str(the_number) + " existe en la lista")
+else:
+    print("El número " + str(the_number) + " no existe en la lista")
+
+'''
+7.	Crea un programa que muestre un menú de opciones (por ejemplo, opciones 1, 2, 3).
+Utiliza un bucle while para permitir al usuario seleccionar una opción. Si el usuario ingresa
+"0", utiliza break para salir del bucle (Mostrar un mensaje por cada opción elegida).
+'''
+option = 1
+
+while (option != 0):
+    option = int(input("Selecciona la opción correcta según el horario actual: 1(horario de mañana), 2(horario de tarde), 3(horario de noche). Para salir ingrese 0: "))
+    if (option == 1):
+        print("Buenos días!")
+    elif(option == 2):
+        print("Buenas tardes!")
+    elif(option == 3):
+        print("Buenas noches!")
+    elif(option == 0):
+        break
+    else:
+        print("Opción no válida")
