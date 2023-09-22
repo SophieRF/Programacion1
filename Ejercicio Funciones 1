@@ -1,0 +1,23 @@
+/*El error del código está en comparar las variables x e y dentro de las funciones, 
+ya que aquí se estarían comparando dos valores fijos que existen por fuera de las mismas.
+ Para que se aplique una modificación en esos valores, se deben comparar los parámetros a y b dentro de las funciones.
+Código corregido:*/
+
+#Definición de funciones
+def most(a,b):
+    if (a>b):
+        return a
+    else:
+        return b
+
+def least(a,b):
+    if (a<b):
+        return a
+    else: 
+        return b
+    
+#Programa principal 
+x = int(input("Un número: "))
+y = int(input("Otro número: "))
+
+print(most(x-3, least(x + 2, y - 5)))
