@@ -1,0 +1,53 @@
+import random
+
+def seleccionar_palabra():
+    words = ["computer", "smartphone", "algorithm", "programmer", "frontend", "backend"]
+    return random.choice(words)
+
+def inicializar_tablero(palabra):
+    return ["_"] * len(palabra)
+
+def mostrar_tablero(tablero):
+    print("Palabra actual: " + "".join(tablero))
+
+def jugar():
+    palabra_secreta = seleccionar_palabra()
+    tablero = inicializar_tablero(palabra_secreta)
+    attempts = len(palabra_secreta)
+
+    print("Adivina la palabra secreta:", " ".join(tablero))
+
+    while attempts > 0:
+        letter = input("Ingresa una letra: ").lower()
+
+        if len(letter) != 1 or not letter.isalpha():
+            print("Ingresa una sola letra válida.")
+            continue
+
+        if letter in palabra_secreta:
+            for i in range(len(palabra_secreta)):
+                if palabra_secreta[i] == letter:
+                    tablero[i] = letter
+            print("Acertaste!")
+        else:
+            attempts -= 1
+            print(f"Letra incorrecta. Te quedan {attempts} intentos.")
+
+        mostrar_tablero(tablero)
+
+        if "".join(tablero) == palabra_secreta:
+            print("Ganaste!! La palabra secreta es: ", palabra_secreta)
+            break
+
+    if "".join(tablero) != palabra_secreta:
+        print("Perdiste! La palabra secreta era: ", palabra_secreta)
+
+def main():
+    while True:
+        jugar()
+        jugar_nueva_partida = input("¿Quieres jugar otra partida? (si/no): ").lower()
+        if jugar_nueva_partida != 'si':
+            break
+
+if __name__ == "__main__":
+    main()
