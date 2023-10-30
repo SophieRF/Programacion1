@@ -261,3 +261,5 @@ def memory_game(rows, columns):
     board = create_board(rows, columns)
     pairs_found = set()
     attempts = 0
+
+#FUNCIONES TP 8:
